@@ -1,7 +1,17 @@
 package main
 
+import (
+	"log"
+
+	"github.com/gofiber/fiber/v2"
+)
+
 func main() {
-	// This is a placeholder for the main function.
-	// You can add your code here to run the application.
-	println("Hello, World!")
+	app := fiber.New()
+
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, World!")
+	})
+
+	log.Fatal(app.Listen(":3000"))
 }
