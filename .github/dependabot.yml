@@ -1,0 +1,14 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  - package-ecosystem: "gomod"   # Para proyectos en Go
+    directory: "/"               # Ubicación del go.mod
+    schedule:
+      interval: "daily"          # Frecuencia (daily, weekly, monthly)
+    open-pull-requests-limit: 5  # Máximo de PRs abiertas a la vez
+    target-branch: "develop"          # Rama objetivo para los PRs
+    commit-message:
+      prefix: "fix(deps)"        # Personaliza el mensaje del commit
+    labels:
+      - "dependencies"
+      - "security"
